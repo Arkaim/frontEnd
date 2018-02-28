@@ -1,0 +1,243 @@
+.main {
+	min-width: 100vw;
+	min-height: 100vh;
+}
+
+.left__part {
+	width: 25vw;
+	height: 100vh;
+	background-color: #fff;
+	display: inline-block;
+	margin: 0px;
+	padding: 10px;
+	border-right: 1px solid #d9dbdb;
+
+}
+
+.right__part {
+	width: 75vw;
+	height: 100vh;
+	float: right;
+    display:inline-block;
+	margin: 0px;
+	padding: 0;
+	background: url(../pexels-photo-894359.jpeg) no-repeat center center fixed;
+}
+
+.chat__choice {
+	text-align: center;
+	width: 100%;
+	box-sizing: border-box;
+
+}
+
+.btn {
+	width: 33.6%;
+	margin-bottom: 20px;
+	background-color: #6d8ddb;
+	border-color: #6d8ddb; 
+}
+
+.contact__left {
+	border-radius: 3px;
+	border-color: #064af1;
+}
+
+.contact__avatar {
+	border-radius: 50%;
+	width: 50px;
+	height: 50px;
+	display: inline-block;
+	border-width: 4px 4px 4px 4px;
+	border-color: #0853f1;
+	float: left;
+}
+
+.contact__username {
+	display: inline-block;
+	float: left;
+	padding-left: 10px;
+	margin: 0px;
+
+}
+
+.contact__info {
+	padding-top: 5px;
+}
+
+.contact__lastSeen {
+	display: inline-block;
+	color: #b6b8b8;
+	float: right;
+	font-size: 14px;
+}
+
+.last__message {
+	display: inline-block;
+	min-width: 50%;
+	padding-left: 10px;
+	font-size: 14px;
+	color: #b6b8b8;
+}
+
+.contact {
+	margin-bottom: 20px;
+}
+
+.right__contact {
+	width: 100%;
+	background-color: #fff;
+	height: 55px;
+	border-bottom: 1px solid #d9dbdb;
+
+}
+
+.right__contact__info h6 {
+	margin-left: 30px;
+	padding-top: 7px;
+	margin-bottom: 0px;
+}
+
+.right__contact__info p {
+	margin-left: 30px;
+	color: #1bd42f;
+
+}
+
+.messages {
+  height: auto;
+  min-height: calc(100% - 93px);
+  max-height: calc(100% - 93px);
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+@media screen and (max-width: 735px) {
+   .messages {
+    max-height: calc(100% - 105px);
+  }
+}
+ .messages::-webkit-scrollbar {
+  width: 8px;
+  background: transparent;
+}
+ .messages::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+ .messages ul li {
+  display: inline-block;
+  clear: both;
+  float: left;
+  margin: 15px 15px 5px 15px;
+  width: calc(100% - 25px);
+  font-size: 0.9em;
+}
+ .messages ul li:nth-last-child(1) {
+  margin-bottom: 20px;
+}
+ .messages ul li.sent img {
+  margin: 6px 8px 0 0;
+}
+ .messages ul li.sent p {
+  background: #435f7a;
+  color: #f5f5f5;
+}
+ .messages ul li.replies img {
+  float: right;
+  margin: 6px 0 0 8px;
+}
+ .messages ul li.replies p {
+  background: #f5f5f5;
+  float: right;
+}
+ .messages ul li img {
+  width: 22px;
+  border-radius: 50%;
+  float: left;
+}
+ .messages ul li p {
+  display: inline-block;
+  padding: 10px 15px;
+  border-radius: 20px;
+  max-width: 205px;
+  line-height: 130%;
+}
+@media screen and (min-width: 735px) {
+   .messages ul li p {
+    max-width: 300px;
+  }
+}
+
+
+@media screen and (min-width: 735px) {
+   .messages ul li p {
+    max-width: 300px;
+  }
+}
+
+
+ .message-input {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  z-index: 99;
+}
+ .message-input .wrap {
+  position: relative;
+}
+ .message-input .wrap input {
+  font-family: "proxima-nova",  "Source Sans Pro", sans-serif;
+  float: left;
+  border: none;
+  width: calc(100% - 90px);
+  padding: 11px 32px 10px 8px;
+  font-size: 0.8em;
+  color: #32465a;
+}
+@media screen and (max-width: 735px) {
+   .message-input .wrap input {
+    padding: 15px 32px 16px 8px;
+  }
+}
+ .message-input .wrap input:focus {
+  outline: none;
+}
+ .message-input .wrap .attachment {
+  position: absolute;
+  right: 60px;
+  z-index: 4;
+  margin-top: 10px;
+  font-size: 1.1em;
+  color: #435f7a;
+  opacity: .5;
+  cursor: pointer;
+}
+@media screen and (max-width: 735px) {
+   .message-input .wrap .attachment {
+    margin-top: 17px;
+    right: 65px;
+  }
+}
+ .message-input .wrap .attachment:hover {
+  opacity: 1;
+}
+ .message-input .wrap button {
+  float: right;
+  border: none;
+  width: 50px;
+  padding: 12px 0;
+  cursor: pointer;
+  background: #32465a;
+  color: #f5f5f5;
+}
+@media screen and (max-width: 735px) {
+   .message-input .wrap button {
+    padding: 16px 0;
+  }
+}
+ .message-input .wrap button:hover {
+  background: #435f7a;
+}
+ .message-input .wrap button:focus {
+  outline: none;
+}
