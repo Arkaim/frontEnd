@@ -21,6 +21,7 @@
     display:inline-block;
   margin: 0px;
   padding: 0;
+  background: url(img/wormz.png) ;
 }
 
 .chat__choice {
@@ -184,6 +185,7 @@
   width: 75%;
   z-index: 99;
   border-top: 1px solid #e9eee8;
+    background-color: white;
 }
  .message-input .wrap {
   position: relative;
@@ -196,6 +198,8 @@
   padding: 11px 32px 10px 8px;
   font-size: 1em;
   color: #32465a;
+    background-color: white;
+
 }
 @media screen and (max-width: 735px) {
    .message-input .wrap input {
@@ -212,6 +216,7 @@
   margin-top: 10px;
   font-size: 1.3em;
   color: #435f7a;
+  background-color: white;
   opacity: .5;
   cursor: pointer;
 }

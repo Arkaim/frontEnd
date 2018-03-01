@@ -92,7 +92,7 @@ class Chat extends Component {
       <div className="right__part">
         <div className="right__contact">
           <div className="right__contact__info">
-            <h6>Emma Watson</h6>
+            <h6>{this.props.name}</h6>
             <p>online</p>
           </div>
         </div>
@@ -108,7 +108,7 @@ class Chat extends Component {
             <form className="wrap" onSubmit={this.sendMessage}>
               <input type="text" placeholder="Write your message..." ref={(a) => this._inputElement1 = a}/>
               <i className="fa fa-paperclip attachment" aria-hidden="true"></i>
-              <button type="submit" className="submit"><i className="fa fa-paper-plane" aria-hidden="true"></i></button>
+              <button type="submit" className="submitB"><i className="fa fa-paper-plane" aria-hidden="true"></i></button>
             </form>
           </div>
 

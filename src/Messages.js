@@ -17,8 +17,6 @@ class Messages extends Component {
     var chatID = this.props.chatID;
     var messageText = message.text;
 
-    //console.log(message.chatID);
-
     if (message.chatID === chatID) {
       if (message.type === 0) {
         return (
@@ -45,12 +43,6 @@ class Messages extends Component {
 
     var messages = this.props.entries;
     var allMessages = messages.map(this.createMessageList);
-
-    /*var needed = messages.filter(function (msg) {
-      return (msg.chatID === 0);
-    });
-
-    var neededMapped = needed.map(this.createMessageList);*/
 
     return (
       <div>

@@ -65,7 +65,7 @@ class Chats extends Component {
     }
 
     return (
-      <div className="contact" onClick={() => this.changeID(chat.id)}>
+      <div className="contact" onClick={() => this.changeID(chat.id, chatName)}>
         <img className="contact__avatar" src={img1}></img>
         <div className="contact__info">
           <h5 className="contact__username">{chatName}</h5>
@@ -76,8 +76,8 @@ class Chats extends Component {
     );
   }
 
-  changeID(id) {
-    this.props.updateID(id);
+  changeID(id, name) {
+    this.props.updateID(id, name);
   }
 
   render() {

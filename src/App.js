@@ -13,15 +13,17 @@ class App extends Component {
   constructor() {
     super();
     this.state = { 
-      id: 0
+      id: 0, 
+      name: "Emma Watson"
     };
 
     this.updateID= this.updateID.bind(this);
   }
 
-  updateID(id) {
+  updateID(id, name) {
     this.setState({
-      id: id
+      id: id,
+      name: name
     });
   }
 
@@ -29,7 +31,7 @@ class App extends Component {
     return ( 
       <div className="main">
         <ChatList updateID={this.updateID}  />
-        <Chat id={this.state.id}/>
+        <Chat id={this.state.id} name={this.state.name}/>
       </div>
     );
   }

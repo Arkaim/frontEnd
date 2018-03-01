@@ -45,6 +45,30 @@ class ChatList extends Component {
     });
 
     chatsArray.unshift({
+      type: 0,
+      fname: "Rob",
+      lname: "Watson",
+      username: "@rwatson",
+      phone: 87019992450,
+      image: img1,
+      lastmsgtime: "11:26",
+      lastmsg: "hiii",
+      id: 6
+    });
+
+    chatsArray.unshift({
+      type: 0,
+      fname: "Sam",
+      lname: "Rockwell",
+      username: "@watson",
+      phone: 87019992450,
+      image: img1,
+      lastmsgtime: "21:23",
+      lastmsg: "aloha",
+      id: 7
+    });
+
+    chatsArray.unshift({
       type: 1,
       groupName: "FriendsGroup",
       lastmsg: "John: Hi guys!",
@@ -63,6 +87,16 @@ class ChatList extends Component {
     });
 
     chatsArray.unshift({
+      type: 1,
+      groupName: "Replicants",
+      lastmsg: "BladeRunner: i'll kill you all",
+      image: img1,
+      lastmsgtime: "13:24",
+      id: 8
+    });
+
+
+    chatsArray.unshift({
       type: 2,
       botName: "FlibustaBot",
       lastmsg: "Download this books!",
@@ -71,6 +105,7 @@ class ChatList extends Component {
       id: 4
     });
 
+    
     chatsArray.unshift({
       type: 2,
       botName: "HappyBot",
@@ -78,6 +113,24 @@ class ChatList extends Component {
       image: img1,
       lastmsgtime: "13:48",
       id: 5
+    });
+
+    chatsArray.unshift({
+      type: 2,
+      botName: "MusicBot",
+      lastmsg: "Download this music!",
+      image: img1,
+      lastmsgtime: "12:15",
+      id: 9
+    });
+    
+    chatsArray.unshift({
+      type: 2,
+      botName: "YouTubeBot",
+      lastmsg: "Download this video",
+      image: img1,
+      lastmsgtime: "13:48",
+      id: 10
     });
 
     this.setState({
@@ -94,8 +147,8 @@ class ChatList extends Component {
     });
   }
 
-  updateID(id) {
-    this.props.updateID(id);
+  updateID(id, name) {
+    this.props.updateID(id, name);
   }
 
   render() {
