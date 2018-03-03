@@ -14,7 +14,7 @@ class App extends Component {
     super();
     this.state = { 
       id: 0, 
-      name: "Emma Watson"
+      name: "Eddie VanHalen"
     };
 
     this.updateID= this.updateID.bind(this);

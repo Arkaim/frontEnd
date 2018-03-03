@@ -4,9 +4,6 @@ import './App.css';
 import img1 from './img/pexels-photo-894359.jpeg';
 
 
-
-//var idH = 0;
-
 class Chats extends Component {
 
   constructor(props, context) {
@@ -64,16 +61,23 @@ class Chats extends Component {
       lastMsgSent = lastmsg;
     }
 
-    return (
-      <div className="contact" onClick={() => this.changeID(chat.id, chatName)}>
-        <img className="contact__avatar" src={img1}></img>
-        <div className="contact__info">
-          <h5 className="contact__username">{chatName}</h5>
-          <p className="contact__lastSeen">{lastSeenTime}</p>
-          <div className="last__message">{lastMsgSent}</div>
+    if (chat.toShow) {
+      return (
+        <div className="contact" onClick={() => this.changeID(chat.id, chatName)}>
+          <img className="contact__avatar" src={img1}></img>
+          <div className="contact__info">
+            <h5 className="contact__username">{chatName}</h5>
+            <p className="contact__lastSeen">{lastSeenTime}</p>
+            <div className="last__message">{lastMsgSent}</div>
+          </div>
         </div>
-      </div>
-    );
+      );
+    }
+    else {
+      return;
+    }
+
+    
   }
 
   changeID(id, name) {
@@ -83,7 +87,7 @@ class Chats extends Component {
   render() {
 
     var chats = this.props.entries;
-    //var allChats = chats.map(this.createChatList);
+    var allChats = chats.map(this.createChatList);
 
     var peopleChats = chats.filter(function (chat) {
       return (chat.type === 0);
@@ -119,10 +123,18 @@ class Chats extends Component {
       );  
     }
 
-    else {
+    else if (this.props.types === 2) {
       return (
         <div>
           {botsChatsMapped}
+        </div>
+      );  
+    }
+
+    else {
+      return (
+        <div>
+          {allChats}
         </div>
       );  
     }

@@ -8,36 +8,56 @@ class Messages extends Component {
 
   constructor(props, context) {
     super(props, context);
+
+    this.state = {
+      editing: false
+    };
  
     this.createMessageList = this.createMessageList.bind(this);
+    this.edit = this.edit.bind(this);
   }
 
   createMessageList(message) {
 
+
     var chatID = this.props.chatID;
     var messageText = message.text;
 
-    if (message.chatID === chatID) {
-      if (message.type === 0) {
-        return (
-          <li className="sent">
-            <img src="http://emilcarlsson.se/assets/mikeross.png" alt="" />
-            <p>{messageText}</p>
-          </li>
-        );
-      }
+    if (message.toShow){
+      if (message.chatID === chatID) {
+        if (message.type === 0) {
+          return (
+            <li className="sent">
+              <img src="http://emilcarlsson.se/assets/mikeross.png" alt="" />
+              <p>{messageText}</p>
+            </li>
+          );
+        }
 
-      else {
-        return (
-          <li className="replies">
-            <img src="http://emilcarlsson.se/assets/mikeross.png" alt="" />
-            <p>{messageText}</p>
-          </li>
-        );
+        else {
+          return (
+            <li className="replies" onDoubleClick={() => this.edit(message)}>
+              <img src="http://emilcarlsson.se/assets/mikeross.png" alt="" />
+              <p>{messageText}</p>
+            </li>
+          );
+        }
       }
     }
-  }
+
+    else {
+      return;
+    }
     
+  }
+
+  edit(msg) {
+    this.props.editMessage(msg);
+  }
+
+  delete(msgID) {
+    this.props.delete(msgID);
+  } 
 
   render() {
 

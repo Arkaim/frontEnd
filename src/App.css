@@ -5,12 +5,13 @@
 
 .left__part {
   width: 25vw;
-  height: 100vh;
+  max-height: 100vh;
   background-color: #fff;
   display: inline-block;
   margin: 0px;
   padding: 10px;
   border-right: 1px solid #d9dbdb;
+  overflow-y: scroll;
 
 }
 
@@ -18,10 +19,10 @@
   width: 75vw;
   height: 100vh;
   float: right;
-    display:inline-block;
+  display:inline-block;
   margin: 0px;
   padding: 0;
-  background: url(img/wormz.png) ;
+  background-image: url(img/back.jpg);
 }
 
 .chat__choice {
@@ -104,17 +105,57 @@
 
 }
 
+.right__contact__info button {
+  margin-left: 300px;
+}
+
+
+.fa-search {
+  float: right;
+  display: inline-block;
+  margin-top: -50px;
+  margin-right: 20px;
+}
+
+.searchMsg {
+  float: right;
+  display: inline-block;
+  margin-top: -55px;
+  margin-right: 50px;
+  width: 250px;
+}
+
+.right__contact__info h6 {
+  display: inline-block;
+}
+
+.modal {
+  background-color: red;
+  width:400px; /*Ширина блока*/
+    height:200px; /*Высота блока*/
+    margin:0 auto;
+    overflow:visible;
+    position:absolute;
+    left:50%;
+    top:50%;
+    margin-left:-200px; /*Смещаем блок на половину всей ширины влево*/
+    margin-top:-100px;
+}
+
+
 .messages {
-  height: auto;
-  min-height: calc(100% - 93px);
-  max-height: calc(100% - 93px);
+  max-height: 85vh;
   overflow-y: scroll;
   overflow-x: hidden;
+
 }
 
 @media screen and (max-width: 735px) {
    .messages {
     max-height: calc(100% - 105px);
+      height: 95%;
+  overflow-y: scroll;
+  overflow-x: hidden;
   }
 }
  .messages::-webkit-scrollbar {
@@ -124,13 +165,17 @@
  .messages::-webkit-scrollbar-thumb {
   background-color: rgba(0, 0, 0, 0.3);
 }
+
+
  .messages ul li {
+
   display: inline-block;
   clear: both;
   float: left;
   margin: 15px 15px 5px 15px;
   width: calc(100% - 25px);
   font-size: 0.9em;
+  word-wrap: break-word;
 }
  .messages ul li:nth-last-child(1) {
   margin-bottom: 20px;
@@ -168,10 +213,7 @@
   }
 }
 
-.submit {
-  height: 100%;
-  width: 50px;
-}
+
 @media screen and (min-width: 735px) {
    .messages ul li p {
     max-width: 300px;
@@ -179,13 +221,16 @@
 }
 
 
+
+
  .message-input {
   position: absolute;
   bottom: 0;
   width: 75%;
+  background-color: white;
   z-index: 99;
-  border-top: 1px solid #e9eee8;
-    background-color: white;
+  border-top: 1px solid #d9dbdb;
+  border-left: 1px solid #d9dbdb;
 }
  .message-input .wrap {
   position: relative;
@@ -196,10 +241,8 @@
   border: none;
   width: calc(100% - 90px);
   padding: 11px 32px 10px 8px;
-  font-size: 1em;
+  font-size: 0.8em;
   color: #32465a;
-    background-color: white;
-
 }
 @media screen and (max-width: 735px) {
    .message-input .wrap input {
@@ -214,9 +257,8 @@
   right: 60px;
   z-index: 4;
   margin-top: 10px;
-  font-size: 1.3em;
+  font-size: 1.1em;
   color: #435f7a;
-  background-color: white;
   opacity: .5;
   cursor: pointer;
 }
@@ -248,4 +290,9 @@
 }
  .message-input .wrap button:focus {
   outline: none;
+}
+
+
+.fa-paperclip {
+  margin: 10px;
 }

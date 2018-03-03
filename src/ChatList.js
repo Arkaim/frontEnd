@@ -29,7 +29,8 @@ class ChatList extends Component {
       image: img1,
       lastmsgtime: "18:10",
       lastmsg: "wohoo",
-      id: 0
+      id: 0,
+      toShow: true
     });
 
     chatsArray.unshift({
@@ -41,7 +42,8 @@ class ChatList extends Component {
       image: img1,
       lastmsgtime: "14:46",
       lastmsg: "bungalaa",
-      id: 1
+      id: 1,
+      toShow: true
     });
 
     chatsArray.unshift({
@@ -53,7 +55,8 @@ class ChatList extends Component {
       image: img1,
       lastmsgtime: "11:26",
       lastmsg: "hiii",
-      id: 6
+      id: 6,
+      toShow: true
     });
 
     chatsArray.unshift({
@@ -65,7 +68,8 @@ class ChatList extends Component {
       image: img1,
       lastmsgtime: "21:23",
       lastmsg: "aloha",
-      id: 7
+      id: 7,
+      toShow: true
     });
 
     chatsArray.unshift({
@@ -74,7 +78,8 @@ class ChatList extends Component {
       lastmsg: "John: Hi guys!",
       image: img1,
       lastmsgtime: "15:44",
-      id: 2
+      id: 2,
+      toShow: true
     });
 
     chatsArray.unshift({
@@ -83,7 +88,8 @@ class ChatList extends Component {
       lastmsg: "Guliermo: i broke my guitar",
       image: img1,
       lastmsgtime: "10:54",
-      id: 3
+      id: 3,
+      toShow: true
     });
 
     chatsArray.unshift({
@@ -92,9 +98,9 @@ class ChatList extends Component {
       lastmsg: "BladeRunner: i'll kill you all",
       image: img1,
       lastmsgtime: "13:24",
-      id: 8
+      id: 8,
+      toShow: true
     });
-
 
     chatsArray.unshift({
       type: 2,
@@ -102,9 +108,9 @@ class ChatList extends Component {
       lastmsg: "Download this books!",
       image: img1,
       lastmsgtime: "12:15",
-      id: 4
+      id: 4,
+      toShow: true
     });
-
     
     chatsArray.unshift({
       type: 2,
@@ -112,7 +118,8 @@ class ChatList extends Component {
       lastmsg: "Dont worry",
       image: img1,
       lastmsgtime: "13:48",
-      id: 5
+      id: 5,
+      toShow: true
     });
 
     chatsArray.unshift({
@@ -121,7 +128,8 @@ class ChatList extends Component {
       lastmsg: "Download this music!",
       image: img1,
       lastmsgtime: "12:15",
-      id: 9
+      id: 9,
+      toShow: true
     });
     
     chatsArray.unshift({
@@ -130,7 +138,8 @@ class ChatList extends Component {
       lastmsg: "Download this video",
       image: img1,
       lastmsgtime: "13:48",
-      id: 10
+      id: 10,
+      toShow: true
     });
 
     this.setState({
@@ -139,6 +148,7 @@ class ChatList extends Component {
 
     this.changeType = this.changeType.bind(this);
     this.updateID = this.updateID.bind(this);
+    this.searchChats = this.searchChats.bind(this);
   }
 
   changeType(number) {
@@ -149,6 +159,57 @@ class ChatList extends Component {
 
   updateID(id, name) {
     this.props.updateID(id, name);
+
+    /*var chats = this.state.chats;
+    var neededChat;
+
+    for (var i = 0; i < chats.length; i++) {
+      if (chats[i].id === id) {
+        neededChat = chats[i];
+      }
+    }
+
+    var filteredChats = chats.filter(function (ch) {
+      return (ch.id !== id);
+    });
+
+    filteredChats.unshift(neededChat);
+
+    this.setState({
+      chats: filteredChats
+    });*/
+  }
+
+  searchChats() {
+    var chatsArray = this.state.chats;
+
+    for (var i = 0; i < chatsArray.length; i++) {
+      chatsArray[i].toShow = true;
+    }
+
+    for (var i = 0; i < chatsArray.length; i++) {
+      if (chatsArray[i].type === 0) {
+        if (!chatsArray[i].fname.startsWith(this._inputElement1.value)) {
+          chatsArray[i].toShow = false;
+        }
+      }
+
+      else if (chatsArray[i].type === 1) {
+        if (!chatsArray[i].groupName.startsWith(this._inputElement1.value)) {
+          chatsArray[i].toShow = false;
+        }
+      }
+
+      else if (chatsArray[i].type === 2) {
+        if (!chatsArray[i].botName.startsWith(this._inputElement1.value)) {
+          chatsArray[i].toShow = false;
+        }
+      }
+    }
+
+    this.setState({
+      chats: chatsArray
+    });
   }
 
   render() {
@@ -159,7 +220,9 @@ class ChatList extends Component {
           <div className="input-group-prepend">
             <span className="input-group-text" id="basic-addon1">@</span>
           </div>
-          <input type="text" className="form-control" placeholder="Search" aria-label="Username" aria-describedby="basic-addon1"></input>
+          <input type="text" className="form-control" placeholder="Search" 
+                  aria-label="Username" aria-describedby="basic-addon1" 
+                  onChange={() => this.searchChats()} ref={(a) => this._inputElement1 = a}></input>
         </div>
 
         <div className="btn-group chat__choice" role="group" aria-label="Basic example">
